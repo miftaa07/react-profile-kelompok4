@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  transition: background 0.3s ease;
+}
+.nav-link {
+  @apply relative text-gray-700 dark:text-gray-200 
+  hover:text-blue-500 dark:hover:text-blue-400 
+  transition;
+}
+
+.nav-link::after {
+  content: "";
+  @apply absolute left-0 -bottom-1 w-0 h-[2px] 
+  bg-blue-500 dark:bg-blue-400 
+  transition-all duration-300;
+}
+
+.nav-link:hover::after {
+  @apply w-full;
+}
